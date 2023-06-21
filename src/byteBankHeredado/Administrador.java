@@ -1,20 +1,24 @@
 package byteBankHeredado;
 
 public class Administrador extends Funcionario implements Autenticable {
-
-	private String clave;
+	
+	private AutenticacionUtil util;
+	
+	public Administrador() {
+		this.util = new AutenticacionUtil();
+	}
 
 	public void setClave(String clave) {
-		this.clave = clave;
+		this.util.setClave(clave);
 	}
 	
 	public boolean iniciarSesion(String clave) {
-		return clave == "AluraCursosOnline";
+		return this.util.iniciarSesion(clave);
 	}
 	@Override
 	public double getBonificacion() {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.getSalario();
 	}
 
 }

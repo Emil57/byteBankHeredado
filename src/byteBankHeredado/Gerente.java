@@ -15,7 +15,7 @@ public class Gerente extends Funcionario implements Autenticable {
 	//sobre-escritura del metodo
 	@Override
 	public double getBonificacion() {
-		System.out.println("Desde Gerente");
+		System.out.println("Ejecutando desde Gerente");
 		return super.getSalario() + this.getBonificacion()*0.05;
 	}
 }
